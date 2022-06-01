@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +20,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
- Route::view('/',"login");
+//  Route::view('/',"login");
+
+ //Route::view('/',"about");
+//  Route::view('/',"contact");
+
+
+
+Route::get('/viewInfo',[RegisterController::class,'getall']);
+
+Route::get('/getId',[RegisterController::class,'getid']);
