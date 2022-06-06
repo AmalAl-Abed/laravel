@@ -3,6 +3,7 @@
 use App\Http\Controllers\pass;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use Illuminate\http\Request;
 
 
 /*
@@ -25,27 +26,12 @@ Route::get('/', function () {
 });
 
 
-// Route::get('/about', function () {
-//     return view('about');
-// });
-
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
-
-
-//  Route::view('/',"login");
-
- //Route::view('/',"about");
-//  Route::view('/',"contact");
-
-
-
-Route::get('/viewInfo',[RegisterController::class,'getall']);
-
 Route::get('/getId',[RegisterController::class,'getid']);
 
 Route::get('/home',[pass::class,'home']);
 Route::get('/about',[pass::class,'about']);
 
+Route::get('viewInfo',[RegisterController::class,'search']);
+Route::post('viewInfo',[RegisterController::class,'search']);
+
+Route::resource('registers',RegisterController ::class);

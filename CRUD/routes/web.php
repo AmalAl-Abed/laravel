@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\show;
-
+use App\Http\Controllers\RegisterController;
+use Illuminate\http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +14,17 @@ use App\Http\Controllers\show;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/calculater', function () {
-    return view('calculater');
-});
 
-Route::post('/calculater',[show::class,'add'])->name('value');
-//Route::post('/calculater',[show::class,'subtract'])->name('value1');
+
+
+
+
+Route::resource('registers', RegisterController::class);
+
+
+
 
