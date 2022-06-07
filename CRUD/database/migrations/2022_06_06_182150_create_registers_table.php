@@ -19,6 +19,8 @@ class CreateRegistersTable extends Migration
             $table->string("name")->nullable();
             $table->integer("age")->nullable();
             $table->string("email")->nullable();
+            $table->string('image')->nullable();
+
         });
     }
 

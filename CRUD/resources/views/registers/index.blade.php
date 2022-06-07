@@ -10,7 +10,7 @@
 
 </form>
 
-<a href="{{ route('registers.create') }}" class="btn btn-success" style="margin-left: 50px">create</a>
+<a href="{{ route('registers.create') }}" class="btn btn-success" style="margin-left: 50px">{{ trans('create') }}</a>
 <br><br><br>
 
 <table data-toggle='table'>
@@ -20,6 +20,7 @@
         <th>Name</th>
         <th>age</th>
         <th>email</th>
+        <th>image</th>
         <th>action</th>
       </tr>
     </thead>
@@ -30,6 +31,8 @@
         <td>{{$value->name}}</td>
         <td>{{$value->age}}</td>
         <td>{{$value->email}}</td>
+
+        <td> <img src="{{ url('public/Image/'.$value->image) }}" width="500px"></td>
         <td>
             <a href="{{route('registers.edit',$value->id)}}">edit</a>
             <a href="{{route('registers.show',$value->id)}}">show</a>

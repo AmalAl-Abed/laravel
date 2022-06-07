@@ -30,7 +30,7 @@
         </div>
     @endif
 
-    <form action="{{ route('registers.store') }}" method="POST">
+    <form action="{{ route('registers.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
          <div class="row">
@@ -41,6 +41,16 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>image:</strong>
+                        
+                        <input type="file" name="image" class="form-control" placeholder="name">
+                    </div>
+                </div>
+
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                   <strong>Email:</strong>
@@ -50,7 +60,7 @@
              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                   <strong>age:</strong>
-                    <input type='text' class="form-control"  name="password" placeholder="age">
+                    <input type='text' class="form-control"  name="age" placeholder="age">
                 </div>
             </div>
 

@@ -41,7 +41,20 @@ class RegisterController extends Controller
     {
 
 
-        Register::create($request->all());
+        $input = $request->all();
+        if($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('public/Image'), $filename);
+            $input['image'] = "$filename";
+
+        }
+
+
+
+
+        Register::create( $input);
+
 
         return redirect()->route('registers.index')->with('success','user created successfully.');
     }
