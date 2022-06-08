@@ -13,13 +13,15 @@ class CreateRegistersTable extends Migration
      */
     public function up()
     {
+
+
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("name")->nullable();
-            $table->integer("age")->nullable();
-            $table->string("email")->nullable();
-            $table->string('image')->nullable();
+            $table->string("name");
+            $table->integer("age");
+            $table->string("email");
+            $table->string('image');
 
         });
     }
